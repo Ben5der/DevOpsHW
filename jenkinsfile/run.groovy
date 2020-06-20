@@ -40,7 +40,7 @@ pipeline {
                     ]) {
 
                         sh "echo '${password}' | sudo -S docker build ${WORKSPACE}/auto -t docker_image_Alexander_K"
-                        sh "echo '${password}' | sudo -S docker run -d  --name nginx_Alexander_K -v /home/adminci/Alexander_K V2:/stats_folder docker_image_Alexander_K"
+                        sh "echo '${password}' | sudo -S docker run -d  --name nginx_Alexander_K -v /home/adminci/Alexander_K V2:/stats_folder docker_image_alexander_k"
                     }
                 }
             }
@@ -58,8 +58,8 @@ pipeline {
                         } catch (Exception e) {
                             print 'file exist'
                         }
-                        sh "echo '${password}' | sudo -S docker exec -t nginx_Alexander_K bash -c 'df -h > /log.txt'"
-                        sh "echo '${password}' | sudo -S docker exec -t nginx_Alexander_K bash -c 'top -n 1 -b >> /log.txt'"
+                        sh "echo '${password}' | sudo -S docker exec -t nginx_alexander_k bash -c 'df -h > /log.txt'"
+                        sh "echo '${password}' | sudo -S docker exec -t nginx_alexander_k bash -c 'top -n 1 -b >> /log.txt'"
                     }
                 }
             }
