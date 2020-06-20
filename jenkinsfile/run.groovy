@@ -11,8 +11,8 @@ pipeline {
                         passwordVariable: 'password')
                     ]) {
                         try {
-                            sh "echo '${password}' | sudo -S docker stop nginx_Alexander_K"
-                            sh "echo '${password}' | sudo -S docker container rm nginx_Alexander_K"
+                            sh "echo '${password}' | sudo -S docker stop nginx_alexander_k"
+                            sh "echo '${password}' | sudo -S docker container rm nginx_alexander_k"
                         } catch (Exception e) {
                             print 'container not exist, skip clean'
                         }
@@ -39,7 +39,7 @@ pipeline {
                         passwordVariable: 'password')
                     ]) {
 
-                        sh "echo '${password}' | sudo -S docker build ${WORKSPACE}/auto -t docker_image_Alexander_K"
+                        sh "echo '${password}' | sudo -S docker build ${WORKSPACE}/auto -t docker_image_alexander_k"
                         sh "echo '${password}' | sudo -S docker run -d  --name nginx_Alexander_K -v /home/adminci/Alexander_K V2:/stats_folder docker_image_alexander_k"
                     }
                 }
