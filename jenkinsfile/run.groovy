@@ -40,7 +40,7 @@ pipeline {
                     ]) {
 
                         sh "echo '${password}' | sudo -S docker build ${WORKSPACE}/auto -t docker_image_alexander_k"
-                        sh "echo '${password}' | sudo -S docker run -d -p 9090:80 --name nginx_Alexander_K -v /home/adminci/Alexander_K_V2:/log docker_image_alexander_k"
+                        sh "echo '${password}' | sudo -S docker run -d -p 1234:80 --name nginx_Alexander_K -v /home/adminci/Alexander_K_V2:/log docker_image_alexander_k"
                     }
                 }
             }
