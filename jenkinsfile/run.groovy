@@ -11,8 +11,8 @@ pipeline {
                         passwordVariable: 'password')
                     ]) {
                         try {
-                            sh "echo '${password}' | sudo -S docker stop nginx_alexander_k"
-                            sh "echo '${password}' | sudo -S docker container rm nginx_alexander_k"
+                            sh "echo '${password}' | sudo -S docker stop nginx_Alexander_K"
+                            sh "echo '${password}' | sudo -S docker container rm nginx_Alexander_K"
                         } catch (Exception e) {
                             print 'container not exist, skip clean'
                         }
@@ -58,8 +58,8 @@ pipeline {
                         } catch (Exception e) {
                             print 'file exist'
                         }
-                        sh "echo '${password}' | sudo -S docker exec -t nginx_alexander_k bash -c 'df -h > /log/log.txt'"
-                        sh "echo '${password}' | sudo -S docker exec -t nginx_alexander_k bash -c 'top -n 1 -b >> /log/log.txt'"
+                        sh "echo '${password}' | sudo -S docker exec -t nginx_Alexander_K bash -c 'df -h > /log/log.txt'"
+                        sh "echo '${password}' | sudo -S docker exec -t nginx_Alexander_K bash -c 'top -n 1 -b >> /log/log.txt'"
                     }
                 }
             }
