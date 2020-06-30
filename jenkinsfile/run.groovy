@@ -73,7 +73,8 @@ pipeline {
                         usernameVariable: 'username',
                         passwordVariable: 'password')
                     ]) {
-                        sh "echo '${password}' | sudo -S docker stop nginx_Alexander_K"                 
+                        sh "echo '${password}' | sudo -S docker stop nginx_Alexander_K" 
+						currentBuild.result = 'FAILURE'
                     }
                 }
             }
